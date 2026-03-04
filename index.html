@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colorful Frontend</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Colorful Frontend</h1>
+    <button onclick="getMessage()">Get Backend Message</button>
+    <p id="message"></p>
+
+    <script>
+        async function getMessage() {
+            const response = await fetch('http://YOUR_PUBLIC_IP:5000/api/message');
+            const data = await response.json();
+            document.getElementById('message').innerText = data.message;
+        }
+    </script>
+</body>
+</html>

@@ -26,7 +26,7 @@
 
     <script>
         async function getMessage() {
-            const response = await fetch('http://YOUR_PUBLIC_IP:5000/api/message');
+            const response = await fetch('http://13.235.45.30:5000/api/message');
             const data = await response.json();
             document.getElementById('message').innerText = data.message;
         }
